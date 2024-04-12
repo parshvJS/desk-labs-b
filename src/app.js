@@ -2,13 +2,13 @@ import cookieParser from "cookie-parser";
 import express, { urlencoded } from "express"
 import uploadRoute from "./routes/uploaded.js";
 import cors from "cors";
-
 const app = express();
 
 
 app.use(cors());
 app.use(cookieParser());
-app.use(urlencoded())
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.use(express.json(
 {
